@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+
+public class hypotenuse {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        int birinciKenar, ikinciKenar;
+        double ucuncuKenar;
+
+        System.out.print("birinciKenar = " );
+        birinciKenar = in.nextInt();
+
+        System.out.print("ikinciKenar = " );
+        ikinciKenar = in.nextInt();
+
+
+        ucuncuKenar = Math.sqrt((birinciKenar * birinciKenar) + (ikinciKenar * ikinciKenar));
+
+
+        System.out.print("Hipotenüs: " + ucuncuKenar);
+    }
+}
