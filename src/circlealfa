@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class circlehw {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int r;
+        double pi = 3.14;
+        double alfa,area;
+
+
+
+
+        System.out.println("Enter the radius: ");
+        r = scan.nextInt();
+
+        System.out.println("Enter the alfa: ");
+        alfa = scan.nextDouble();
+
+        area = (pi * (r * r)*alfa)/360;
+
+        System.out.println("The area of the circle is " + area);
+
+
+    }
+}
