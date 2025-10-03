@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class area {
+     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        double birinciKenar, ikinciKenar,perimeter,area,ucuncuKenar,u;
+
+         System.out.print("birinciKenar: ");
+         birinciKenar = in.nextDouble();
+
+         System.out.print("ikinciKenar: ");
+         ikinciKenar = in.nextDouble();
+
+         System.out.print("ucuncuKenar: ");
+         ucuncuKenar = in.nextDouble();
+
+
+         perimeter = birinciKenar + ikinciKenar + ucuncuKenar;
+         u = perimeter / 2;
+         area = Math.sqrt(u * (u - birinciKenar) * (u - ikinciKenar) * (u - ucuncuKenar));
+
+
+
+         System.out.println("Üçgenin Çevresi: " + perimeter);
+         System.out.println("Üçgenin Alanı: " + area);
+
+
+
+
+     }
+}
