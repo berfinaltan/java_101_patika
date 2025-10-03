@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+
+public class taxi {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double gidilenMesafe,kmUcreti,acilisUcreti,minTutar,tutar;
+        kmUcreti = 2.20;
+        minTutar = 20;
+        acilisUcreti = 10;
+
+        System.out.println("Gidilen mesafeyi giriniz: ");
+        gidilenMesafe = scanner.nextDouble();
+
+        tutar = acilisUcreti + (gidilenMesafe * kmUcreti);
+        tutar = (tutar < 20) ? 20 : tutar;
+
+        System.out.println("Ödenecek tutar: " +tutar);
+    }
+}
