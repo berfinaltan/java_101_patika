@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+
+
+public class kitleindex {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+    double boy,kilo;
+
+        System.out.println("Boyunuzu metre cinsinden girimiz: ");
+        boy = in.nextDouble();
+
+        System.out.println("Kilonuzu giriniz: ");
+        kilo=in.nextDouble();
+
+     double vki =  kilo/(boy*boy);
+
+        System.out.println("Vücut kitle indeksiniz: " + vki);
+
+        if(vki>25)
+            System.out.println("Obez");
+        else if(vki<=25)
+            System.out.println("Normal");
+        else
+            System.out.println("Zayıf");
+    }
+}
