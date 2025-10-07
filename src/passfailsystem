@@ -1,0 +1,67 @@
+import java.util.Scanner;
+
+public class passfailsystem {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int matematik, fizik, turkce, kimya, muzik;
+        int toplam = 0;
+        int dersSayisi = 0;
+        double ortalama = 0;
+
+        System.out.println("Matematik notunuzu giriniz: ");
+        matematik = scanner.nextInt();
+        System.out.println("Fizik notunuzu giriniz: ");
+        fizik = scanner.nextInt();
+        System.out.println("Turkce notunuzu giriniz: ");
+        turkce = scanner.nextInt();
+        System.out.println("Kimya notunuzu giriniz: ");
+        kimya = scanner.nextInt();
+        System.out.println("Muzik notunuzu giriniz: ");
+        muzik = scanner.nextInt();
+
+        // 0-100 aralığındaki geçerli notları toplama ve sayma
+        if (matematik >= 0 && matematik <= 100) {
+            toplam += matematik;
+            dersSayisi++;
+        }
+        if (fizik >= 0 && fizik <= 100) {
+            toplam += fizik;
+            dersSayisi++;
+        }
+        if (turkce >= 0 && turkce <= 100) {
+            toplam += turkce;
+            dersSayisi++;
+        }
+        if (kimya >= 0 && kimya <= 100) {
+            toplam += kimya;
+            dersSayisi++;
+        }
+        if (muzik >= 0 && muzik <= 100) {
+            toplam += muzik;
+            dersSayisi++;
+        }
+
+        // --- Ortalama Hesaplama ve Sonuç Kontrolü ---
+
+        // dersSayisi'nın 0'dan büyük olup olmadığını kontrol ediyoruz.
+        // Bu, hem sıfıra bölme hatasını engeller hem de kodun bu bloğu dıştaki if bloğu yapar.
+        if (dersSayisi > 0) {
+            ortalama = toplam / (double) dersSayisi;
+            System.out.println("Ortalamanız: " + ortalama);
+
+            // İçteki if-else bloğu: Pass/Fail kontrolü
+            if (ortalama >= 55) {
+                System.out.println("Pass");
+            } else {
+                System.out.println("Failed");
+            }
+        } // Dıştaki IF bloğu burada kapandı.
+        else { // Şimdi bu ELSE, yukarıdaki IF'e (dersSayisi > 0) bağlı.
+            // Bu blok, "Geçerli not girilemedi" durumunu temsil eder.
+            System.out.println("Geçerli not girilemedi. Ortalama hesaplanamadı.");
+        }
+
+        scanner.close();
+    }
+}
