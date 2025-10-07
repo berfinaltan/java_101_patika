@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class practiceloop {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        int k;
+        int toplam = 0;
+        int adet = 0;
+
+        System.out.print("Sayı giriniz: ");
+        k = in.nextInt();
+
+        for (int i = 0; i <= k; i++) {
+            if ((i % 3 == 0) && (i % 4 == 0)) {
+                System.out.println(i);
+                toplam = toplam + i;
+                adet = adet + 1;
+            }
+        }
+
+        if (adet > 0) {
+            double ortalama = (double) toplam / adet;  // <-- buradaki (double) çok önemli!
+            System.out.println("Ortalama: " + ortalama);
+        } else {
+            System.out.println("Bu aralıkta 3 ve 4’e tam bölünen bir sayı yok.");
+        }
+
+        in.close();
+    }
+}
