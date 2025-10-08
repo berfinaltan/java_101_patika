@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class combination {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+
+        System.out.print("n değerini giriniz:");
+        int n = in.nextInt();
+
+        System.out.print("r değerini giriniz:");
+        int r = in.nextInt();
+
+        int nFact = 1, rFact = 1, nMinusRFact = 1;
+
+        for (int i=1;i <= n; i++){
+            nFact *=   i;
+        }
+        for (int i=1;i <= r; i++){
+            rFact *=   i;
+        }
+        for (int i=1;i <= (n-r); i++){
+            nMinusRFact *=   i;
+        }
+
+        int combination = nFact /(rFact * (nMinusRFact));
+        System.out.println(combination);
+
+
+
+
+
+
+
+    }
+}
