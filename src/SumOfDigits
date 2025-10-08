@@ -1,0 +1,20 @@
+{
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+
+        System.out.print("Enter number: ");
+        int number;
+        number = in.nextInt();
+        int sum = 0;
+     
+
+        while (number != 0) {
+            int digit = number % 10;
+            sum +=digit;
+            number /= 10;
+        }
+
+        System.out.println("Sum of digits: " + sum);
+    }
+}
