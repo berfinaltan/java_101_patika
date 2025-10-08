@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class PowerOfTwo {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        int n;
+        System.out.println("Bir sayı giriniz: ");
+        n = in.nextInt();
+        int result = 1;
+
+
+
+            for(int i = 0; i <= n; i++){
+                System.out.println("4^"+ i + "="+ result);
+                result = result * 4;
+
+            }
+
+            result = 1;
+
+        System.out.println();
+        
+        for(int j = 0; j <= n; j++){
+            System.out.println("5^"+ j + "="+ result);
+            result = result * 5;
+
+
+
+        }
+
+    }
+}
