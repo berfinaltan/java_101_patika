@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class MaxMin {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+
+        System.out.print("Kaç tane sayı gireceksiniz: ");
+        int count = input.nextInt();
+
+        int min = 0;
+        int max = 0;
+        int value;
+
+        for (int i = 1;i <= count; i++) {
+            System.out.println(i + ".sayıyı giriniz: ");
+            value = input.nextInt();
+
+            if (i == 1){
+                min = value;
+                max = value;
+            }
+            else if (value < min){
+                min = value;
+            }
+            if (value > max){
+                max = value;
+            }
+        }
+        System.out.println("En küçük sayı: "+ min);
+        System.out.println("En büyük sayı: "+ max);
+    }
+
+
+}
