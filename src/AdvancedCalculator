@@ -1,0 +1,86 @@
+import java.util.Scanner;
+
+public class SimpleCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int select;
+        double a,b,result;
+
+        do {
+            System.out.print("1-Toplama\n2-Çıkarma\n3-Çarpma\n4-Bölme\n5-Üs Alma\n6-Faktöriyel\n7-Mod Alma\n8-Dikdörtgen Alan ve Çevre");
+            System.out.println("\nSeçiminiz:");
+            select = scanner.nextInt();
+
+            if (select == 0){
+            System.out.println("Çıkış yapılıyor..");
+                    break;
+            }
+
+            if (select != 6 && select != 8){
+                System.out.println("Birinci sayıyı giriniz: ");
+                a = scanner.nextDouble();
+                System.out.println("İkinci sayıyı giriniz: ");
+                b = scanner.nextDouble();
+            }
+            else {
+                a = b = 0;
+            }
+            if (select == 1){
+                result = a + b;
+                System.out.println("Sonuç: " + result);
+            }
+            else if ( select == 2){
+                result = a - b;
+                System.out.println("Sonuç: " + result);
+
+            }
+            else if(select == 3){
+                result = a * b;
+                System.out.println("Sonuç: " + result);
+            }
+            else if (select == 4){
+                result = a / b;
+                System.out.println("Sonuç: " + result);
+            }
+            else if (select == 5 ){
+                System.out.println("Taban sayıyı giriniz:");
+                int base = scanner.nextInt();
+                System.out.println("Üs sayıyı giriniz: ");
+                int exp = scanner.nextInt();
+                int power = 1;
+                for (int i = 1; i <= exp; i++) {
+                    power = power * base;
+                }
+                System.out.println("Sonuç: " + power);
+            }
+            else if (select == 6){
+                System.out.print("Faktöriyelini almak istediğiniz sayıyı yazınız: ");
+                int n = scanner.nextInt();
+                int fact = 1;
+                for (int i = 1; i <= n; i++) {
+                    fact = fact * i;
+                }
+                System.out.println("Sonuç: " + fact);
+            }
+            else if( select == 7){
+                result = a % b;
+                System.out.println("Sonuç: " + result);
+            }
+            else if (select == 8){
+                System.out.print("Kısa kenar uzunluğunu giriniz: ");
+                double kisa = scanner.nextDouble();
+                System.out.print("Uzun kenar giriniz:");
+                double uzun = scanner.nextDouble();
+                double alan = kisa * uzun;
+                double cevre = 2 *(kisa + uzun);
+                System.out.print("Alan: " + alan);
+                System.out.print("Cevre: " + cevre);
+            }
+            else {
+                System.out.println("Geçersiz seçim yaptınız!!!!");
+            }
+
+
+        } while(true);
+    }
+}
