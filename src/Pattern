@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class pattern {
+    static void printPattern(int n, int temp, boolean increasing) {
+        System.out.print(temp + " ");
+
+        // Negatif veya sıfıra gelince yön değiştir
+        if (temp <= 0) {
+            increasing = true;
+        }
+
+        // Geri dönüş tamamlanınca dur
+        if (increasing && temp == n) {
+            return;
+        }
+
+        // Recursive çağrı (ileri ya da geri)
+        if (increasing)
+            printPattern(n, temp + 5, true);
+        else
+            printPattern(n, temp - 5, false);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("N sayısı: ");
+        int n = scanner.nextInt();
+
+        printPattern(n, n, false);
+    }
+}
