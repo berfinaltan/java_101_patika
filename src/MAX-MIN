@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        int[] list = {15, 12, 788, 1, -1, -778, 2, 0};
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Bir sayı giriniz: ");
+        int number = input.nextInt();
+
+        int min = Integer.MIN_VALUE; // girilen sayıdan küçük en yakın
+        int max = Integer.MAX_VALUE; // girilen sayıdan büyük en yakın
+
+        for (int i : list) {
+            if (i < number && i > min) {
+                min = i;
+            }
+            if (i > number && i < max) {
+                max = i;
+            }
+        }
+
+        System.out.println("Girilen sayı: " + number);
+        System.out.println("Girilen sayıdan küçük en yakın sayı: " + min);
+        System.out.println("Girilen sayıdan büyük en yakın sayı: " + max);
+    }
+}
+
+     
+       
+        
