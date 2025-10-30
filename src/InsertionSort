@@ -1,0 +1,109 @@
+/*
+ [22, 27, 16, 2, 18, 6] -> Insertion Sort
+
+ 1. [22, 27, 16, 2, 18, 6]
+ 2. [22, 16, 27, 2, 18, 6]
+ 3. [16, 22, 27, 2, 18, 6]
+ 4. [2, 16, 22, 27, 18, 6]
+ 5. [2, 16, 18, 22, 27, 6]
+ 6. [2, 6, 16, 18, 22, 27]
+
+ Big-O: O(n²)
+ Time Complexity:
+    - Best Case: O(n)
+    - Average Case: O(n²)
+    - Worst Case: O(n²)
+ 18 sayısı ortalarda olduğu için Average Case kapsamındadır.
+*/
+
+
+
+
+
+
+
+public class InsertionSort {
+    public static void main(String[] args) {
+
+        int[] arr = {22, 27, 16, 2, 18, 6};
+
+        System.out.println("Before sorting:");
+        printArray(arr);
+
+        insertionSort(arr);
+
+        System.out.println("After sorting:");
+        printArray(arr);
+    }
+
+    public static void insertionSort(int[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            int key = arr[i];
+            int j = i - 1;
+
+
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j--;
+            }
+            arr[j + 1] = key;
+        }
+    }
+
+    public static void printArray(int[] arr) {
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+}
+
+
+###########################################
+
+
+public class SelectionSort {
+    public static void main(String[] args) {
+
+        int[] arr = {7, 3, 5, 8, 2, 9, 4, 15, 6};
+
+        System.out.println("Before sorting:");
+        printArray(arr);
+
+        selectionSort(arr);
+
+        System.out.println("After sorting:");
+        printArray(arr);
+    }
+
+    public static void selectionSort(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            int minIndex = i;
+
+
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+
+
+            int temp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = temp;
+
+
+            System.out.print((i + 1) + ". adım: ");
+            printArray(arr);
+        }
+    }
+
+    public static void printArray(int[] arr) {
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+}
+
+
