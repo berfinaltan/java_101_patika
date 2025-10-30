@@ -1,0 +1,63 @@
+public class BinaryTree {
+
+
+    static class Node {
+        int data;
+        Node left, right;
+
+        public Node(int value) {
+            data = value;
+            left = right = null;
+        }
+    }
+
+
+    Node root;
+
+
+    public void insert(int value) {
+        root = insertRec(root, value);
+    }
+
+
+    private Node insertRec(Node root, int value) {
+        if (root == null) {
+            root = new Node(value);
+            return root;
+        }
+
+        if (value < root.data)
+            root.left = insertRec(root.left, value);
+        else if (value > root.data)
+            root.right = insertRec(root.right, value);
+
+        return root;
+    }
+
+
+    public void inorder() {
+        inorderRec(root);
+    }
+
+    private void inorderRec(Node root) {
+        if (root != null) {
+            inorderRec(root.left);
+            System.out.print(root.data + " ");
+            inorderRec(root.right);
+        }
+    }
+
+
+    public static void main(String[] args) {
+        BinaryTree tree = new BinaryTree();
+
+        int[] values = {7, 5, 1, 8, 3, 6, 0, 9, 4, 2};
+
+        for (int val : values) {
+            tree.insert(val);
+        }
+
+        System.out.println("Inorder traversal of the Binary Search Tree:");
+        tree.inorder();
+    }
+}
